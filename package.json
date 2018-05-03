@@ -1,0 +1,15 @@
+{
+  "name": "css-reset",
+  "version": "0.1.0",
+  "description": "custom css reset of all elements",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "css",
+    "style"
+  ],
+  "author": "geoffOkumu",
+  "license": "ISC"
+}
