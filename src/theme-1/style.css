@@ -1,0 +1,1084 @@
+/*!
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+and Blueprint http://www.blueprintcss.org/
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 - Normalize
+3.0 - Typography
+	3.1 - Global
+	3.2 - Paragraph
+	3.3 - Headings
+	3.4 - Links
+	3.5 - Blockquote
+	3.6 - General
+4.0 - Elements
+	4.1 - HR
+	4.2 - List
+	4.3 - Table
+	4.4 - Image
+	4.5 - HTML5 Elements
+	4.6 - Forms
+5.0 - Accessibility
+6.0 - Alignments
+7.0 - Clearings
+8.0 - Navigation Menus
+	8.1 - Main Navigation
+	8.2 - Header Menu
+	8.3 - Header Menu Responsive
+9.0 - Navigation Misc
+	9.1 - Navigation Archives
+	9.2 - Navigation Post
+	9.3 - Navigation Comments
+	9.4 - Navigation Attachments
+	9.5 - Navigation Common Styles: Comments, Attachments
+10.0 - Skeleton
+	10.1 - Site Wrapper
+	10.2 - Site Header
+	10.3 - Site Branding Wrapper
+	10.4 - Site Custom Logo
+	10.5 - Site Branding
+	10.6 - Site Content
+	10.7 - Sidebar
+	10.8 - Footer
+11.0 - Content
+	11.1 - HEntry
+	11.2 - Page Links
+	11.3 - More Link
+	11.4 - Entry Meta
+	11.5 - Author Info
+	11.6 - Comments
+12.0 - Widgets
+	12.1 - Search Form Widget
+	12.2 - Tag Cloud Widget
+13.0 - Media
+	13.1 - Captions
+	13.2 - Galleries
+	13.3 - Media Elements
+14.0 - Utilities
+	14.1 - Overlay Effect
+	14.2 - Misc
+15.0 - Admin Bar
+16.0 - Jetpack
+	16.1 - WP Stats
+17.0 - Media Queries
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+1.0 - Normalize
+--------------------------------------------------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  border: 0;
+  font-family: inherit;
+  font-size: 100%;
+  font-style: inherit;
+  font-weight: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+  -ms-text-size-adjust: 100%;
+  /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* Apply a natural box layout model to the document; see http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+}
+
+*,
+*:before,
+*:after {
+  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  background: #fff;
+  /* Fallback for when there is no custom background color defined. */
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+[hidden],
+template {
+  display: none;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+table {
+  /* tables still need 'cellspacing="0"' in the markup */
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+caption,
+th,
+td {
+  font-weight: normal;
+  text-align: left;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+}
+
+blockquote,
+q {
+  quotes: "" "";
+}
+
+a {
+  background-color: transparent;
+}
+
+a:focus {
+  outline: thin dotted;
+}
+
+a:hover,
+a:active {
+  outline: 0;
+}
+
+a img {
+  border: 0;
+}
+
+img {
+  border: 0;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Forms */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  line-height: inherit;
+  margin: 0;
+}
+
+button {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+input {
+  line-height: normal;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+  border: 0;
+  padding: 0;
+}
+
+textarea {
+  overflow: auto;
+}
+
+optgroup {
+  font-weight: bold;
+}
+
+/*--------------------------------------------------------------
+3.0 Typography
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+3.1 Global
+--------------------------------------------------------------*/
+body {
+  background: #f8f8f8;
+  color: #3d3d3d;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*--------------------------------------------------------------
+3.2 Paragraph
+--------------------------------------------------------------*/
+p {
+  font-size: 16px;
+  font-size: 1rem;
+  margin-bottom: 26px;
+  margin-bottom: 1.625rem;
+}
+
+p.lead {
+  font-size: 22px;
+  font-size: 1.375rem;
+  line-height: 1.3;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+3.3 Headings
+--------------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6 {
+  clear: both;
+  color: #020202;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 32px;
+  font-size: 2rem;
+  margin-bottom: 26px;
+  margin-bottom: 1.625rem;
+}
+
+h2 {
+  font-size: 26px;
+  font-size: 1.625rem;
+  margin-bottom: 26px;
+  margin-bottom: 1.625rem;
+}
+
+h3 {
+  font-size: 23px;
+  font-size: 1.4375rem;
+  margin-bottom: 26px;
+  margin-bottom: 1.625rem;
+}
+
+h4 {
+  font-size: 16px;
+  font-size: 1rem;
+  margin-bottom: 26px;
+  margin-bottom: 1.625rem;
+}
+
+h5 {
+  font-size: 12px;
+  font-size: 0.75rem;
+  margin-bottom: 26px;
+  margin-bottom: 1.625rem;
+  -webkit-text-stroke: .35px;
+  /* Hack to fix thin text in Windows */
+}
+
+h6 {
+  font-size: 10px;
+  font-size: 0.625rem;
+  margin-bottom: 26px;
+  margin-bottom: 1.625rem;
+  -webkit-text-stroke: .35px;
+  /* Hack to fix thin text in Windows */
+}
+
+/*--------------------------------------------------------------
+3.4 Links
+--------------------------------------------------------------*/
+a, a:visited {
+  color: #f15a24;
+  text-decoration: none;
+}
+
+a:hover, a:focus, a:active {
+  color: #f15a24;
+}
+
+/*--------------------------------------------------------------
+3.5 Blockquote
+--------------------------------------------------------------*/
+blockquote {
+  color: #555;
+  border-left: 6px solid #f15a24;
+  font-family: "Lato", sans-serif;
+  font-size: 21px;
+  font-size: 1.3125rem;
+  line-height: 1.3;
+  margin: 0 auto 26px;
+  margin: 0 auto 1.625rem;
+  padding: 15px;
+  padding: 0.9375rem;
+  position: relative;
+}
+
+blockquote blockquote {
+  margin: 15px;
+  margin: 0.9375rem;
+}
+
+blockquote p {
+  margin: 0;
+}
+
+blockquote cite {
+  color: #cccccc;
+  display: block;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  font-style: normal;
+  margin: 15px 0 0;
+  margin: 0.9375rem 0 0;
+  text-transform: uppercase;
+}
+
+blockquote cite a, blockquote cite a:visited {
+  color: #cccccc;
+}
+
+blockquote cite a:hover, blockquote cite a:focus, blockquote cite a:active {
+  color: #999999;
+}
+
+blockquote.alignright, blockquote.alignleft {
+  display: block;
+  float: none;
+  margin: 0 0 26px;
+  margin: 0 0 1.625rem;
+}
+
+blockquote:last-child {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+3.6 General
+--------------------------------------------------------------*/
+b, strong {
+  font-weight: bold;
+}
+
+dfn, cite, em, i {
+  font-style: italic;
+}
+
+abbr, acronym {
+  border-bottom: 1px dotted #ebebeb;
+  cursor: help;
+}
+
+mark {
+  background: #fcf8e3;
+  padding: 2px 4px;
+  padding: 0.125rem 0.25rem;
+  text-decoration: none;
+}
+
+sup,
+sub {
+  font-size: 75%;
+  height: 0;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  bottom: 1ex;
+}
+
+sub {
+  top: .5ex;
+}
+
+small {
+  font-size: 75%;
+}
+
+big {
+  font-size: 125%;
+}
+
+cite {
+  font-size: 12px;
+  font-size: 0.75rem;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+address {
+  font-style: italic;
+  margin: 0 0 26px;
+  margin: 0 0 1.625rem;
+}
+
+address:last-child {
+  margin-bottom: 0;
+}
+
+code, kbd, samp, tt, var {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 12px;
+  font-size: 0.75rem;
+}
+
+kbd {
+  background-color: #020202;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+          box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+  color: #fff;
+  font-size: 90%;
+  padding: 2px 4px;
+  padding: 0.125rem 0.25rem;
+}
+
+kbd kbd {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  font-size: 100%;
+  font-weight: bold;
+  padding: 0;
+}
+
+pre {
+  background: #fafafa;
+  border: 1px dashed #ebebeb;
+  color: #020202;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 12px;
+  font-size: 0.75rem;
+  margin: 0 0 26px;
+  margin: 0 0 1.625rem;
+  max-width: 100%;
+  overflow: auto;
+  padding: 15px;
+  padding: 0.9375rem;
+}
+
+pre:last-child {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+4.0 Elements
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+4.1 HR
+--------------------------------------------------------------*/
+hr {
+  background-color: #ebebeb;
+  border: 0;
+  height: 1px;
+  margin: 0 auto 26px;
+  margin: 0 auto 1.625rem;
+  width: 80%;
+}
+
+/*--------------------------------------------------------------
+4.2 List
+--------------------------------------------------------------*/
+ul, ol {
+  margin: 0 0 26px 26px;
+  margin: 0 0 1.625rem 1.625rem;
+}
+
+ul:last-child, ol:last-child {
+  margin-bottom: 0;
+}
+
+ul {
+  list-style: disc;
+}
+
+ul ul {
+  list-style: circle;
+}
+
+ul ul ul {
+  list-style: square;
+}
+
+ol {
+  list-style: decimal;
+}
+
+ol ol {
+  list-style: upper-alpha;
+}
+
+ol ol ol {
+  list-style: lower-roman;
+}
+
+ol ol ol ol {
+  list-style: lower-alpha;
+}
+
+li > ul,
+li > ol {
+  margin-bottom: 0;
+  margin-left: 26px;
+  margin-left: 1.625rem;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin: 0 26px 26px;
+  margin: 0 1.625rem 1.625rem;
+}
+
+/*--------------------------------------------------------------
+4.3 Table
+--------------------------------------------------------------*/
+/* Table Reboot */
+table {
+  table-layout: fixed;
+  /* Prevents HTML tables from becoming too wide */
+}
+
+/* Table Styles */
+table {
+  background-color: transparent;
+  border-spacing: 0;
+  border-collapse: collapse;
+  min-width: 100%;
+  margin-bottom: 26px;
+  margin-bottom: 1.625rem;
+}
+
+table caption {
+  margin-bottom: 15px;
+  margin-bottom: 0.9375rem;
+}
+
+table th,
+table td {
+  padding: 8px;
+  padding: 0.5rem;
+  line-height: 1.5;
+  vertical-align: top;
+  border-top: 1px solid #ebebeb;
+}
+
+table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #ebebeb;
+  font-weight: 700;
+}
+
+table tbody + tbody {
+  border-top: 2px solid #ebebeb;
+}
+
+table table {
+  background-color: #fafafa;
+}
+
+table:last-child {
+  margin-bottom: 0;
+}
+
+/* Table Small */
+.table-sm th,
+.table-sm td {
+  padding: 5px;
+}
+
+/* Table Bordered */
+.table-bordered {
+  border: 1px solid #ebebeb;
+}
+
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid #ebebeb;
+}
+
+.table-bordered thead th,
+.table-bordered thead td {
+  border-bottom-width: 2px;
+}
+
+/* Table Zebra Striping */
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f3f3f3;
+}
+
+/* Table Hover Effect */
+.table-hover tbody tr:hover {
+  background-color: #f3f3f3;
+}
+
+/* Table Active */
+.table-active,
+.table-active > th,
+.table-active > td {
+  background-color: #f5f5f5;
+}
+
+.table-hover .table-active:hover {
+  background-color: #e8e8e8;
+}
+
+.table-hover .table-active:hover > td,
+.table-hover .table-active:hover > th {
+  background-color: #e8e8e8;
+}
+
+/* Table Success */
+.table-success,
+.table-success > th,
+.table-success > td {
+  background-color: #5cb85c;
+}
+
+.table-hover .table-success:hover {
+  background-color: #4cae4c;
+}
+
+.table-hover .table-success:hover > td,
+.table-hover .table-success:hover > th {
+  background-color: #4cae4c;
+}
+
+/* Table Info */
+.table-info,
+.table-info > th,
+.table-info > td {
+  background-color: #5bc0de;
+}
+
+.table-hover .table-info:hover {
+  background-color: #46b8da;
+}
+
+.table-hover .table-info:hover > td,
+.table-hover .table-info:hover > th {
+  background-color: #46b8da;
+}
+
+/* Table Warning */
+.table-warning,
+.table-warning > th,
+.table-warning > td {
+  background-color: #f0ad4e;
+}
+
+.table-hover .table-warning:hover {
+  background-color: #eea236;
+}
+
+.table-hover .table-warning:hover > td,
+.table-hover .table-warning:hover > th {
+  background-color: #eea236;
+}
+
+/* Table Danger */
+.table-danger,
+.table-danger > th,
+.table-danger > td {
+  background-color: #d9534f;
+}
+
+.table-hover .table-danger:hover {
+  background-color: #d43f3a;
+}
+
+.table-hover .table-danger:hover > td,
+.table-hover .table-danger:hover > th {
+  background-color: #d43f3a;
+}
+
+/* Table Responsive */
+.table-responsive {
+  display: block;
+  margin-bottom: 26px;
+  margin-bottom: 1.625rem;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table-responsive:last-child {
+  margin-bottom: 0;
+}
+
+/* Thead Inverse */
+.thead-inverse th {
+  color: #fff;
+  background-color: #3d3d3d;
+}
+
+/* Thead Default */
+.thead-default th {
+  color: #3d3d3d;
+  background-color: #ebebeb;
+}
+
+/* Table Inverse */
+.table-inverse {
+  color: #fff;
+  background-color: #3d3d3d;
+}
+
+.table-inverse.table-bordered {
+  border: 0;
+}
+
+.table-inverse caption {
+  color: #020202;
+}
+
+.table-inverse th,
+.table-inverse td,
+.table-inverse thead th {
+  border-color: #999999;
+}
+
+.table-inverse a, .table-inverse a:visited {
+  color: #ccc;
+}
+
+.table-inverse a:hover, .table-inverse a:focus, .table-inverse a:active {
+  color: #fff;
+}
+
+/* Table Reflow */
+.table-reflow thead {
+  float: left;
+}
+
+.table-reflow tbody {
+  display: block;
+  white-space: nowrap;
+}
+
+.table-reflow th,
+.table-reflow td {
+  border-top: 1px solid #ebebeb;
+  border-left: 1px solid #ebebeb;
+}
+
+.table-reflow th:last-child,
+.table-reflow td:last-child {
+  border-right: 1px solid #ebebeb;
+}
+
+.table-reflow thead:last-child tr:last-child th,
+.table-reflow thead:last-child tr:last-child td,
+.table-reflow tbody:last-child tr:last-child th,
+.table-reflow tbody:last-child tr:last-child td,
+.table-reflow tfoot:last-child tr:last-child th,
+.table-reflow tfoot:last-child tr:last-child td {
+  border-bottom: 1px solid #ebebeb;
+}
+
+.table-reflow tr {
+  float: left;
+}
+
+.table-reflow tr th,
+.table-reflow tr td {
+  display: block !important;
+  border: 1px solid #ebebeb;
+}
+
+/*--------------------------------------------------------------
+4.4 Image
+--------------------------------------------------------------*/
+img {
+  height: auto;
+  /* Make sure images are scaled correctly. */
+  max-width: 100%;
+  /* Adhere to container width. */
+  vertical-align: middle;
+}
+
+img.alignright, img.alignleft {
+  max-width: 110px;
+}
+
+img.alignright {
+  margin: 0 0 15px 20px;
+  margin: 0 0 0.9375rem 1.25rem;
+}
+
+img.alignleft {
+  margin: 0 20px 15px 0;
+  margin: 0 1.25rem 0.9375rem 0;
+}
+
+.img-responsive {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+4.5 HTML5 Elements
+--------------------------------------------------------------*/
+figure {
+  margin: 0;
+}
+
+embed,
+iframe,
+object,
+audio,
+canvas,
+progress,
+video {
+  max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+4.6 Forms
+--------------------------------------------------------------*/
+/* Form Reboot */
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  line-height: inherit;
+  margin: 0;
+  max-width: 100%;
+}
+
+input,
+textarea {
+  background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+}
+
+input:focus,
+textarea:focus {
+  outline: 0;
+}
+
+input[type="search"] {
+  -webkit-appearance: none;
+}
+
+fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+legend {
+  display: block;
+  white-space: normal;
+  width: 100%;
+  padding: 0;
+  margin-bottom: .5rem;
+  font-size: 1.5rem;
+  line-height: inherit;
+}
+
+::-webkit-input-placeholder {
+  color: #999;
+}
+
+:-moz-placeholder {
+  color: #999;
+}
+
+::-moz-placeholder {
+  color: #999;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: #999;
+}
+
+/* Form Styles */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  background: #f15a24;
+  border: 1px solid #f15a24;
+  border-bottom: 3px solid #f15a24;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 12px;
+  font-size: 0.75rem;
+  line-height: normal;
+  padding: 12px 24px;
+  padding: 0.75rem 1.5rem;
+  position: relative;
+  text-transform: uppercase;
+  text-decoration: none;
+  -webkit-appearance: button;
+}
+
+button:hover, button:focus, button:active,
+input[type="button"]:hover,
+input[type="button"]:focus,
+input[type="button"]:active,
+input[type="reset"]:hover,
+input[type="reset"]:focus,
+input[type="reset"]:active,
+input[type="submit"]:hover,
+input[type="submit"]:focus,
+input[type="submit"]:active {
+  background: #f15a24;
+  outline: none;
+}
+
+button:active,
+input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+  bottom: -2px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+select,
+textarea {
+  color: #020202;
+  border: 1px solid #ebebeb;
+  border-radius: 2px;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+select:focus,
+textarea:focus {
+  color: #020202;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"] {
+  padding: 8px 10px;
+  padding: 0.5rem 0.625rem;
+}
+
+select {
+  padding: 8px 10px;
+  padding: 0.5rem 0.625rem;
+  width: 98%;
+}
+
+textarea {
+  padding: 8px 10px;
+  padding: 0.5rem 0.625rem;
+  resize: vertical;
+  vertical-align: top;
+  width: 98%;
+}

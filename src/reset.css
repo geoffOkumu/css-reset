@@ -1,0 +1,88 @@
+/*
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 - Normalize
+3.0 - Typography
+	3.1 - Global
+	3.2 - Paragraph
+	3.3 - Headings
+	3.4 - Links
+	3.5 - Blockquote
+	3.6 - General
+4.0 - Elements
+	4.1 - HR
+	4.2 - List
+	4.3 - Table
+	4.4 - Image
+	4.5 - HTML5 Elements
+    4.6 - Forms
+*/
+/*--------------------------------------------------------------
+1.0 - Normalize
+--------------------------------------------------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  border: 0;
+  font-family: inherit;
+  font-size: 100%;
+  font-style: inherit;
+  font-weight: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+    -ms-text-size-adjust: 100%;
+    /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    /* Apply a natural box layout model to the document; see http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+}
+
+*,
+*:before,
+*:after {
+  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+    background: #fff;
+    /* Fallback for when there is no custom background color defined. */
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
